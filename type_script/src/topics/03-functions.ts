@@ -3,7 +3,7 @@ function add_numbers(a: number, b: number): number {
     return a + b;
 }
 
-// lambda functions
+// lambda functions opop[o8oip
 const add_nums = (a: number, b: number): string => {
     return `${a + b}`;
 }
