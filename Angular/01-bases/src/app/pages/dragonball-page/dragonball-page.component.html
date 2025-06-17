@@ -14,23 +14,26 @@
     <li>Listado</li>
     <ol>
       @for (character of characters(); track character.id) {
-        <li>
-          <span>{{ character.name }}  </span>
-          <!--          <strong class="text-danger">({{ character.power }})</strong>-->
-          <strong
-            [class.text-danger]="character.power >= 8000"
-            [class.text-info]="character.power < 8000"
-          >
-            ({{ character.power }})
-          </strong>
+        @if (character.power > 1000) {
+          <li>
+            <span>{{ character.name }}  </span>
+            <!--          <strong class="text-danger">({{ character.power }})</strong>-->
 
-          <!--  forma No recomendada ABAJO -->
-          <!--          <strong [ngClass]="powerClass()">-->
-          <!--          ({{ character.power }})-->
-          <!--          </strong>-->
-          <!--          -->
+            <strong
+              [class.text-danger]="character.power >= 8000"
+              [class.text-info]="character.power < 8000"
+            >
+              ({{ character.power }})
+            </strong>
 
-        </li>
+            <!--  forma No recomendada ABAJO -->
+            <!--          <strong [ngClass]="powerClass()">-->
+            <!--          ({{ character.power }})-->
+            <!--          </strong>-->
+            <!--          -->
+
+          </li>
+        }
       }
     </ol>
   </div>
