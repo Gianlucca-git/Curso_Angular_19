@@ -1,0 +1,25 @@
+<h1>dragonball-page works!</h1>
+<hr/>
+
+<section class="row">
+  <div class="col-12 col-sm-6">
+    <h3>Agregar</h3>
+    <input type="text" class="form-control" placeholder="Nombre">
+    <input type="text" class="form-control mt-2" placeholder="Cantidad de Poder">
+
+    <button class="mt-2 btn btn-primary">Agregar</button>
+  </div>
+
+  <div class="col-12 col-sm-6">
+    <li>Listado</li>
+    <ol>
+      @for (character of characters(); track character.id) {
+        <li>
+          <span>{{ character.name }}  </span>
+          <strong class="text-danger">({{ character.power }})</strong>
+
+        </li>
+      }
+    </ol>
+  </div>
+</section>
