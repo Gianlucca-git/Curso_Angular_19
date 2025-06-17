@@ -13,10 +13,31 @@
 - abrir servicio
 > ng serve -o
 
+### Seccion 1
 
-### Estructura del Proyecto
+• Router
+• Signal
+• Signal Computer
+• Zoneless vs zonejs 
 
--src 
-    - app
-      - ./page (nomenclatura para componentes de pantalla completa)
-      - ./page (nomenclatura para componentes de pantalla completa)
+
+### Seccion 2
+
+• RouterLink
+• RouterLink Active
+• Nuevo control flow
+• @for
+• @if
+• ngClass - ngStyle - Alternativas
+• Comunicación entre componentes
+• Inputs / outputs (Como señales)
+• Servicios en Angular
+• Efectos y LocalStorage
+• LinkedSignal
+• HashRouter
+• Despliegues
+
+
+- crear componente
+> ng g c [ROOT/NAME]
+
