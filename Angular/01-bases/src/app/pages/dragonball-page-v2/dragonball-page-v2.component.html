@@ -1,0 +1,37 @@
+<h1>dragonball-page works!</h1>
+<hr/>
+
+<section class="row">
+  <div class="col-12 col-sm-6">
+    <h3>Nombre: {{ name() }}</h3>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Nombre"
+      [value]="name()"
+      (change)="name.set( txtName.value )"
+      (input)="name.set( txtName.value )"
+      #txtName
+    >
+
+    <input
+      type="number"
+      class="form-control"
+      placeholder="Poder"
+      [value]="power()"
+      (change)="power.set(parseInt( txtPower.value))"
+      (input)="power.set(+txtPower.value)"
+      #txtPower
+    >
+
+    <button
+      class="mt-2 btn btn-primary"
+      (click)="addCharacter()"
+    >Agregar
+    </button>
+  </div>
+
+  <div class="col-12 col-sm-6">
+    <dragonball-character-list [characters]="characters()"/>
+  </div>
+</section>

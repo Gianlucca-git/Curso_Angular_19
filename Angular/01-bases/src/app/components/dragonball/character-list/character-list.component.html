@@ -1,0 +1,17 @@
+<li>Listado</li>
+<ol>
+  @for (character of characters(); track character.id) {
+    @if (character.power > 1000) {
+      <li>
+        <span>{{ character.name }}  </span>
+
+        <strong
+          [class.text-danger]="character.power >= 8000"
+          [class.text-info]="character.power < 8000"
+        >
+          ({{ character.power }})
+        </strong>
+      </li>
+    }
+  }
+</ol>
