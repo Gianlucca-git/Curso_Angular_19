@@ -3,10 +3,10 @@ import type {Character} from '../../../interfaces/character.interface';
 
 @Component({
   selector: 'dragonball-character-list',
-  imports: [],
   templateUrl: './character-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CharacterListComponent {
+  listName = input.required<string>();
   characters = input.required<Character[]>();
 }
