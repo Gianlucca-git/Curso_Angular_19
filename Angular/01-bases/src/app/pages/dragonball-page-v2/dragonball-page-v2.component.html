@@ -3,7 +3,9 @@
 
 <section class="row">
   <div class="col-12 col-sm-6">
-    <dragonball-character-add/>
+    <dragonball-character-add
+      (newCharacter)="addCharacter($event)"
+    />
   </div>
 
   <div class="col-12 col-sm-6">
