@@ -1,6 +1,5 @@
 [Curso Angular Udemy](https://www.udemy.com/course/angular-fernando-herrera)
 
-<!-- TOC -->
 
 * [**_Introducción a TypeScript_**](#_introducción-a-typescript_)
     * [Comandos](#comandos)
@@ -10,7 +9,6 @@
     * [Parte 2 (Seccion 5 del curso)](#parte-2-seccion-5-del-curso)
     * [Parte 3 (Seccion 6 del curso)](#parte-3-seccion-6-del-curso)
 
-<!-- TOC -->
 
 # **_Introducción a TypeScript_**
 
