@@ -27,6 +27,7 @@
 - crear proyecto (vite ayuda a iniciar proyectos con sus dependencias)
 
 > npm create vite@latest
+> ng new [NAME-APP]
 
 - en el proyecto
 
