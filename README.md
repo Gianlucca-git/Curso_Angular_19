@@ -1,6 +1,5 @@
 [Curso Angular Udemy](https://www.udemy.com/course/angular-fernando-herrera)
 
-
 * [**_Introducción a TypeScript_**](#_introducción-a-typescript_)
     * [Comandos](#comandos)
 * [**_Angular 19_**](#_angular-19_)
@@ -8,7 +7,7 @@
     * [Parte 1 (Seccion 4 del curso)](#parte-1-seccion-4-del-curso)
     * [Parte 2 (Seccion 5 del curso)](#parte-2-seccion-5-del-curso)
     * [Parte 3 (Seccion 6 del curso)](#parte-3-seccion-6-del-curso)
-
+    * [Parte 4 (Seccion 7 del curso)](#parte-4-seccion-7-del-curso)
 
 # **_Introducción a TypeScript_**
 
@@ -99,3 +98,14 @@
 * Señales
 * Propiedades de componentes
 * Tailwind
+
+## Parte 4 (Seccion 7 del curso)
+
+* Manejo de rutas dinámicas
+* Manejo de LocalStorage
+* Observables a Señales
+* Reutilización de componentes
+* Peticiones HTTP
+* Manejo de caché
+* Mapeo de información
+
