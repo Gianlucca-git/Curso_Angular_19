@@ -12,18 +12,20 @@ export default class TrendingPageComponent {
   protected readonly onscroll = onscroll;
 
 
-  scrollDivRef = viewChild<ElementRef>('groupDiv');
+  scrollDivRef = viewChild<ElementRef<HTMLDivElement>>('groupDiv');
 
-  onScroll($event: Event) {
+  onScroll(event: Event) {
     const scrollDiv = this.scrollDivRef()?.nativeElement;
-
-    if (!scrollDiv) return
+    if (!scrollDiv) return;
 
     const scrollTop = scrollDiv.scrollTop;
-    const clientHeight = scrollDiv.scrollHeight;
+    const clientHeight = scrollDiv.clientHeight;
     const scrollHeight = scrollDiv.scrollHeight;
 
-    const isAtBottom = scrollTop + scrollHeight + 300 >= clientHeight;
+    const isAtBottom = scrollTop + clientHeight + 300 >= scrollHeight;
 
+    if (isAtBottom) {
+      this.gifService.loadTrendingGifs();
+    }
   }
 }

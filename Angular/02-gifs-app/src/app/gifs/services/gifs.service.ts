@@ -20,7 +20,7 @@ export class GifsService {
   private http = inject(HttpClient);
 
   trendingGifs = signal<Gif[]>([]);
-  trendingGifsLoading = signal(true);
+  trendingGifsLoading = signal(false);
 
   trendingGifGroups = computed<Gif[][]>(() => {
     const groups = [];
@@ -37,20 +37,27 @@ export class GifsService {
     this.loadTrendingGifs();
   }
 
+  private trendingPage = signal(0);
+
   loadTrendingGifs() {
+
+    // efecto que impide enviar una peticion sin haber resulto la anterior.
+    if (this.trendingGifsLoading()) return;
+    this.trendingGifsLoading.set(true);
+
     this.http.get<GiphyResponse>(`${environment.apiUrlGiphy}/gifs/trending`, {
       params: {
         api_key: environment.apiKeyGiphy,
         limit: 20,
+        offset: this.trendingPage() * 20,
       }
     }).subscribe(
       (response) => {
         const gifs = GifMapper.mapGiphyItemsToGifArray(response.data)
-
-        this.trendingGifs.set(gifs);
+        this.trendingGifs.update((currentGifs) => [...currentGifs, ...gifs
+        ]);
         this.trendingGifsLoading.set(false);
-        console.log('HOLA DESDE loadTrendingGifs');
-
+        this.trendingPage.update((page) => page + 1);
       }
     )
   }

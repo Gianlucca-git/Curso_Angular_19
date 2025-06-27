@@ -8,6 +8,7 @@ export class GifMapper {
       id: item.id,
       title: item.title,
       url: item.images.original.url,
+      // url: 'https://i.pinimg.com/736x/e7/44/fd/e744fd713c47fdcea1a324f4d12a532c.jpg',
     };
   }
 
