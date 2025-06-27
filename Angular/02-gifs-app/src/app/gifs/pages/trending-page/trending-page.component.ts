@@ -13,7 +13,17 @@ export default class TrendingPageComponent {
 
 
   scrollDivRef = viewChild<ElementRef>('groupDiv');
+
   onScroll($event: Event) {
     const scrollDiv = this.scrollDivRef()?.nativeElement;
+
+    if (!scrollDiv) return
+
+    const scrollTop = scrollDiv.scrollTop;
+    const clientHeight = scrollDiv.scrollHeight;
+    const scrollHeight = scrollDiv.scrollHeight;
+
+    const isAtBottom = scrollTop + scrollHeight + 300 >= clientHeight;
+
   }
 }
