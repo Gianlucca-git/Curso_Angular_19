@@ -109,3 +109,9 @@
 * Manejo de caché
 * Mapeo de información
 
+## Parte 5 (Seccion 8 del curso)
+
+* Preservar estado del scroll
+* Hacer scroll infinito
+* Diseño masonry
+* Técnicas y herramientas para depurar
