@@ -8,6 +8,8 @@
     * [Parte 2 (Seccion 5 del curso)](#parte-2-seccion-5-del-curso)
     * [Parte 3 (Seccion 6 del curso)](#parte-3-seccion-6-del-curso)
     * [Parte 4 (Seccion 7 del curso)](#parte-4-seccion-7-del-curso)
+    * [Parte 5 (Seccion 8 del curso)](#parte-5-seccion-8-del-curso)
+    * [Parte 6 (Seccion 9 del curso)](#parte-6-seccion-9-del-curso)
 
 # **_Introducción a TypeScript_**
 
@@ -37,6 +39,11 @@
 > npm run dev
 
 # **_Angular 19_**
+
+## Despliegues 
+
++ [01-bases](https://angular-bases-gian.netlify.app/#/)
++ [02-gifs-app](https://gian-gifs-app.netlify.app/)
 
 ## Comandos
 
@@ -115,3 +122,13 @@
 * Hacer scroll infinito
 * Diseño masonry
 * Técnicas y herramientas para depurar
+
+## Parte 6 (Seccion 9 del curso)
+
+* En esta sección aprenderemos y reforzaremos temas como:
+* Rutas hijas
+* Rutas Anidadas
+* Creación y comunicación entre componentes
+* Tailwind y DaisyUI
+* Archivo de rutas por feature / module
+* Carga perezosa de módulos de rutas
