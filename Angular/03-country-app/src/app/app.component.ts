@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
+import {FooterComponent} from './share/components/footer/footer.component';
 // import {RouterOutlet} from '@angular/router';
 // import {HomeComponent} from './share/pages/home/home.component';
 
@@ -7,6 +8,7 @@ import {RouterOutlet} from '@angular/router';
   selector: 'app-root',
   imports: [
     RouterOutlet,
+    FooterComponent,
     // HomeComponent
   ],
   templateUrl: './app.component.html',
