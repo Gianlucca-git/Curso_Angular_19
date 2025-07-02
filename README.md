@@ -10,6 +10,7 @@
     * [Parte 4 (Seccion 7 del curso)](#parte-4-seccion-7-del-curso)
     * [Parte 5 (Seccion 8 del curso)](#parte-5-seccion-8-del-curso)
     * [Parte 6 (Seccion 9 del curso)](#parte-6-seccion-9-del-curso)
+    * [Parte 7 (Seccion 10 del curso)](#parte-7-seccion-10-del-curso)
 
 # **_Introducción a TypeScript_**
 
@@ -105,6 +106,7 @@
 * Señales
 * Propiedades de componentes
 * Tailwind
+* [cdnjs font](https://cdnjs.com/libraries/font-awesome)
 
 ## Parte 4 (Seccion 7 del curso)
 
@@ -112,7 +114,7 @@
 * Manejo de LocalStorage
 * Observables a Señales
 * Reutilización de componentes
-* Peticiones HTTP
+* Peticiones HTTP [APIGIPHY](https://developers.giphy.com)
 * Manejo de caché
 * Mapeo de información
 
@@ -120,7 +122,7 @@
 
 * Preservar estado del scroll
 * Hacer scroll infinito
-* Diseño masonry
+* [Diseño masonry](https://flowbite.com/docs/components/gallery/)
 * Técnicas y herramientas para depurar
 
 ## Parte 6 (Seccion 9 del curso)
@@ -129,6 +131,20 @@
 * Rutas hijas
 * Rutas Anidadas
 * Creación y comunicación entre componentes
-* Tailwind y DaisyUI
+* [Tailwind 4.1](https://tailwindcss.com) 
+* [DaisyUI](https://daisyui.com)
+* [Iconify](https://iconify.design)
 * Archivo de rutas por feature / module
 * Carga perezosa de módulos de rutas
+
+## Parte 7 (Seccion 10 del curso)
+
+* Recursos como:
+  + Resources
+  + rxResources
+* Señales
+* Servicios
+* Reutilización de componentes
+* Peticiones http
+* Operadores de RXJS
+* Mucho más
