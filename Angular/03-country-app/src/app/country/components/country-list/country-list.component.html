@@ -36,7 +36,11 @@
             </td>
             <td>{{ country.capital }}</td>
             <td>{{ country.indicative }}</td>
-            <td>{{ country.population }}</td>
+            <td>
+              <span class="badge badge-soft">
+                {{ country.population | number }}
+              </span>
+            </td>
             <th>
               <button class="btn btn-ghost btn-xs bg-blue-800">Country
                 Details

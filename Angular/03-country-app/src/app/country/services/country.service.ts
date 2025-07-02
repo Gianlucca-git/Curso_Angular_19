@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ResponseCountry} from '../interfaces/rest-country.interfaces';
-import {map, Observable} from 'rxjs';
+import {map, Observable, catchError, throwError} from 'rxjs';
 import type {CountryInfo} from '../interfaces/country.interfaces';
 import {CountryMapper} from '../mappers/country.mapper';
 
@@ -19,9 +19,13 @@ export class CountryService {
       .get<ResponseCountry[]>(`${API}/capital/${query}`)
       .pipe(
         map((restCountries) =>
-          CountryMapper.mapApiToCountryInfoArray(restCountries))
+          CountryMapper.mapApiToCountryInfoArray(restCountries)),
         // same code
         // map(CountryMapper.mapApiToCountryInfoArray) no funciona por el this
+        catchError(error => {
+          console.log(error)
+          return throwError(() => new Error('No countries found by this capital.'));
+        })
       )
   }
 }
