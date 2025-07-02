@@ -51,6 +51,28 @@
           </tr>
         }
 
+        @if (errorMessage()) {
+          <tr>
+            <td colspan="8" class="text-center">
+              {{ errorMessage() }}
+            </td>
+          </tr>
+        }
+        @if (countries().length == 0 && !isLoading()) {
+          <tr>
+            <td colspan="8" class="text-center">
+              No found results.
+            </td>
+          </tr>
+        }
+        @if (isLoading()) {
+          <tr>
+            <td colspan="8" class="text-center">
+              Loading...
+            </td>
+          </tr>
+        }
+
       </tbody>
       <!-- foot -->
       <!--      <tfoot>-->

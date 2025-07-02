@@ -3,16 +3,24 @@
   (value)="query.set($event)"
 />
 
-@if (countryResources.error()) {
-  <h3>{{ countryResources.error() }}</h3>
-}
-@if (countryResources.hasValue()) {
-  <country-list [countries]="countryResources.value()!"/>
-}
+<country-list
+  [countries]="countryResources.value() ?? []"
+  [errorMessage]="countryResources.error()"
+  [isEmpty]="countryResources.value()?.length == 0"
+  [isLoading]="countryResources.isLoading()"
+/>
 
-<!--Angular version <= 18-->
-<!--@if (isError()) {-->
-<!--  <h3>{{ isError() }}</h3>-->
-<!--} @else {-->
-<!--  <country-list [countries]="countries()"/>-->
-<!--}-->
+
+  <!--@if (countryResources.error()) {-->
+  <!--  <h3>{{ countryResources.error() }}</h3>-->
+  <!--}-->
+  <!--@if (countryResources.hasValue()) {-->
+  <!--  <country-list [countries]="countryResources.value()!"/>-->
+  <!--}-->
+
+  <!--Angular version <= 18-->
+  <!--@if (isError()) {-->
+  <!--  <h3>{{ isError() }}</h3>-->
+  <!--} @else {-->
+  <!--  <country-list [countries]="countries()"/>-->
+  <!--}-->
