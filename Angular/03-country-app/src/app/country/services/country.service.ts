@@ -44,4 +44,18 @@ export class CountryService {
         })
       )
   }
+
+  searchCountryByCode(code: string) {
+
+    return this.http
+      .get<ResponseCountry[]>(`${API}/alpha/${code}`)
+      .pipe(
+        map((restCountries) =>
+          CountryMapper.mapApiToCountryInfoArray(restCountries)),
+        map(countries => countries.at(0)),
+        catchError(error => {
+          return throwError(() => new Error('No countries found by code.'));
+        })
+      )
+  }
 }
