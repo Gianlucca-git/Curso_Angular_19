@@ -1,0 +1,73 @@
+<div class="flex w-full py-30">
+
+  <div class="card place-items-start">
+    <img
+      class="mask mask-squircle"
+      src="{{ country().img}}"
+      alt="{{ country().name }}"
+      width="500"
+    />
+  </div>
+
+  <div class="divider divider-horizontal">{{ country().id }}</div>
+
+  <div class="card bg-base-300 rounded-box grid h-content grow place-items-center">
+    <br>
+    <h1 class="text-3xl">{{ country().name }}</h1>
+    <h1 class="text-sm opacity-50">{{ country().nameOfficial }}</h1>
+    <br>
+    <h1 class="text-3xl">Capital</h1>
+    <h2 class="text-sm opacity-50">{{ country().capital }}</h2>
+    <br>
+    <br>
+    <br>
+    <div class="stats shadow">
+
+      <div class="stat">
+        <div class="stat-figure text-primary">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+            <g fill="#615dff" fill-opacity="0" stroke="#615dff" stroke-linecap="round" stroke-linejoin="round"
+               stroke-width="2">
+              <path stroke-dasharray="20" stroke-dashoffset="20"
+                    d="M12 5c1.66 0 3 1.34 3 3c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 1.34 -3 3 -3Z">
+                <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="20;0"/>
+              </path>
+              <path stroke-dasharray="36" stroke-dashoffset="36" d="M12 14c4 0 7 2 7 3v2h-14v-2c0 -1 3 -3 7 -3Z">
+                <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.5s" values="36;0"/>
+              </path>
+              <animate fill="freeze" attributeName="fill-opacity" begin="1.1s" dur="0.5s" values="0;1"/>
+            </g>
+          </svg>
+
+        </div>
+        <div class="stat-title">Population</div>
+        <div class="stat-value text-primary">{{ country().population | number }}</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-figure text-secondary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="inline-block h-8 w-8 stroke-current"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            ></path>
+          </svg>
+        </div>
+        <div class="stat-title">Area</div>
+        <div class="stat-value text-secondary">{{ country().area | number }}</div>
+      </div>
+
+    </div>
+    <br>
+  </div>
+
+</div>
+

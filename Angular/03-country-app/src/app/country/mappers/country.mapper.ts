@@ -18,6 +18,7 @@ export class CountryMapper {
       capital: apiResponse.capital.join(', '),
       indicative: indicative,
       population: apiResponse.population.valueOf(),
+      area: apiResponse.area.valueOf(),
     };
   }
 

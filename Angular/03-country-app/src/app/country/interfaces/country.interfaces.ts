@@ -8,4 +8,5 @@ export interface CountryInfo {
   capital: string;
   indicative: string;
   population: number;
+  area: number;
 }
