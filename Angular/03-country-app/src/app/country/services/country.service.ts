@@ -13,6 +13,20 @@ const API = 'https://restcountries.com/v3.1';
 export class CountryService {
   private http = inject(HttpClient);
 
+  searchByCountry(query: string): Observable<CountryInfo[]> {
+    query = query.toLowerCase();
+    return this.http
+      .get<ResponseCountry[]>(`${API}/name/${query}`)
+      .pipe(
+        map((restCountries) =>
+          CountryMapper.mapApiToCountryInfoArray(restCountries)),
+        catchError(error => {
+          console.log(error)
+          return throwError(() => new Error('No countries found.'));
+        })
+      )
+  }
+
   searchByCapital(query: string): Observable<CountryInfo[]> {
     query = query.toLowerCase();
     return this.http

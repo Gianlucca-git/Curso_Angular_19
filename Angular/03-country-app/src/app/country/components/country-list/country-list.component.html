@@ -42,7 +42,9 @@
               </span>
             </td>
             <th>
-              <button class="btn btn-ghost btn-xs bg-blue-800">Country
+              <button
+                [routerLink]="['/country/by/', country.id]"
+                class="btn btn-ghost btn-xs bg-blue-800">
                 Details
               </button>
             </th>
