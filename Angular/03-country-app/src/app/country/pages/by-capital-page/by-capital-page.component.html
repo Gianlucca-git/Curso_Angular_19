@@ -1,10 +1,18 @@
 <country-search-input
   placeholder="Search By Capital"
-  (value)="onSearch($event)"
+  (value)="query.set($event)"
 />
 
-@if (isError()) {
-  <h3>{{ isError() }}</h3>
-} @else {
-  <country-list [countries]="countries()"/>
+@if (countryResources.error()) {
+  <h3>{{ countryResources.error() }}</h3>
 }
+@if (countryResources.hasValue()) {
+  <country-list [countries]="countryResources.value()!"/>
+}
+
+<!--Angular version <= 18-->
+<!--@if (isError()) {-->
+<!--  <h3>{{ isError() }}</h3>-->
+<!--} @else {-->
+<!--  <country-list [countries]="countries()"/>-->
+<!--}-->
