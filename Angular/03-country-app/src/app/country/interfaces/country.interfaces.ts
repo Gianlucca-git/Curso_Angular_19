@@ -10,3 +10,24 @@ export interface CountryInfo {
   population: number;
   area: number;
 }
+
+// export type Region =
+//   | 'Africa'
+//   | 'Americas'
+//   | 'Asia'
+//   | 'Europe'
+//   | 'Oceania'
+//   | 'Antarctic';
+//
+//
+// public regions: Region[] = [
+//   'Africa',
+//   'Americas',
+//   'Asia',
+//   'Europe',
+//   'Oceania',
+//   'Antarctic',
+// ];
+//
+//
+// const url = `${API_URL}/region/${region}`;

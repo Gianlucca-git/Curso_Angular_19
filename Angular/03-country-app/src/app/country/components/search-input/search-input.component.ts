@@ -13,6 +13,7 @@ export class SearchInputComponent {
   debounceTime = input(300);
   inputValue = signal<string>('');
 
+  // TODO: check
   debounceEffect = effect((onCleanup) => {
     const value = this.inputValue();
     const timeout = setTimeout(() => {
