@@ -1,7 +1,8 @@
 <country-search-input
   placeholder="Search By Capital"
   (value)="query.set($event)"
-  [debounceTime]="500"
+  [debounceTime]="400"
+  [initialValue]="query()"
 />
 
 <country-list

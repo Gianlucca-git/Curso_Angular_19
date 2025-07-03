@@ -4,6 +4,7 @@ import {CountryListComponent} from '../../components/country-list/country-list.c
 import {CountryService} from '../../services/country.service';
 import {of} from 'rxjs';
 import {rxResource} from '@angular/core/rxjs-interop';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-by-country-page',
@@ -15,8 +16,13 @@ import {rxResource} from '@angular/core/rxjs-interop';
 })
 export class ByCountryPageComponent {
 
+  activatedRoute = inject(ActivatedRoute);
+  queryParam = this.activatedRoute.snapshot.queryParamMap.get('query') ?? '';
+
+  router = inject(Router);
+
   countryService = inject(CountryService);
-  query = signal('');
+  query = signal(this.queryParam);
 
   countryResources = rxResource({
     request: () => ({
@@ -24,6 +30,13 @@ export class ByCountryPageComponent {
     }),
     loader: ({request}) => {
       if (!request.query) return of([]);
+
+      this.router.navigate(['/country/country'], {
+        queryParams: {
+          query: request.query
+        }
+      });
+
       return this.countryService.searchByCountry(request.query)
     }
   })
