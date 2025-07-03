@@ -4,14 +4,15 @@
     * [Comandos](#comandos)
 * [**_Angular 19_**](#_angular-19_)
     * [Comandos](#comandos-1)
-    * [Parte 1 (Seccion 4 del curso)](#parte-1-seccion-4-del-curso)
-    * [Parte 2 (Seccion 5 del curso)](#parte-2-seccion-5-del-curso)
-    * [Parte 3 (Seccion 6 del curso)](#parte-3-seccion-6-del-curso)
-    * [Parte 4 (Seccion 7 del curso)](#parte-4-seccion-7-del-curso)
-    * [Parte 5 (Seccion 8 del curso)](#parte-5-seccion-8-del-curso)
-    * [Parte 6 (Seccion 9 del curso)](#parte-6-seccion-9-del-curso)
-    * [Parte 7 (Seccion 10 del curso)](#parte-7-seccion-10-del-curso)
-    * [Parte 8 (Seccion 11 del curso)](#parte-8-seccion-11-del-curso)
+    * [Seccion 4 del curso](#seccion-4-del-curso)
+    * [Seccion 5 del curso](#seccion-5-del-curso)
+    * [Seccion 6 del curso](#seccion-6-del-curso)
+    * [Seccion 7 del curso](#seccion-7-del-curso)
+    * [Seccion 8 del curso](#seccion-8-del-curso)
+    * [Seccion 9 del curso](#seccion-9-del-curso)
+    * [Seccion 10 del curso](#seccion-10-del-curso)
+    * [Seccion 11 del curso](#seccion-11-del-curso)
+    * [Seccion 12 del curso](#seccion-12-del-curso)
 
 # **_Introducción a TypeScript_**
 
@@ -72,14 +73,14 @@
 
 > ng build
 
-## Parte 1 (Seccion 4 del curso)
+## Seccion 4 del curso
 
 * Router
 * Signal
 * Signal Computer
 * Zoneless vs zonejs
 
-## Parte 2 (Seccion 5 del curso)
+## Seccion 5 del curso
 
 * RouterLink
 * RouterLink Active
@@ -95,7 +96,7 @@
 * HashRouter
 * Despliegues
 
-## Parte 3 (Seccion 6 del curso)
+## Seccion 6 del curso
 
 * LazyLoad
 * Separación de rutas
@@ -110,7 +111,7 @@
 * Tailwind
 * [cdnjs font](https://cdnjs.com/libraries/font-awesome)
 
-## Parte 4 (Seccion 7 del curso)
+## Seccion 7 del curso
 
 * Manejo de rutas dinámicas
 * Manejo de LocalStorage
@@ -120,14 +121,14 @@
 * Manejo de caché
 * Mapeo de información
 
-## Parte 5 (Seccion 8 del curso)
+## Seccion 8 del curso
 
 * Preservar estado del scroll
 * Hacer scroll infinito
 * [Diseño masonry](https://flowbite.com/docs/components/gallery/)
 * Técnicas y herramientas para depurar
 
-## Parte 6 (Seccion 9 del curso)
+## Seccion 9 del curso
 
 * En esta sección aprenderemos y reforzaremos temas como:
 * Rutas hijas
@@ -139,7 +140,7 @@
 * Archivo de rutas por feature / module
 * Carga perezosa de módulos de rutas
 
-## Parte 7 (Seccion 10 del curso)
+## Seccion 10 del curso
 
 * Recursos como:
     + Resources
@@ -151,10 +152,22 @@
 * Operadores de RXJS
 * Mucho más
 
-## Parte 8 (Seccion 11 del curso)
+## Seccion 11 del curso
 
 * Caché
 * Router
 * QueryParameters
 * Configuraciones
 * Debounce
+
+## Seccion 12 del curso
+
+* DatePipe
+* UpperCasePipe
+* LowerCasePipe
+* TitleCasePipe
+* CurrencyPipe
+* DecimalPipe
+* PercentPipe
+* i18nPluralPipe
+* i18nSelectPipe
