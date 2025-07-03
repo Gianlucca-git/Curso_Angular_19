@@ -1,6 +1,7 @@
 <country-search-input
   placeholder="Search By Capital"
   (value)="query.set($event)"
+  [debounceTime]="500"
 />
 
 <country-list
@@ -11,16 +12,16 @@
 />
 
 
-  <!--@if (countryResources.error()) {-->
-  <!--  <h3>{{ countryResources.error() }}</h3>-->
-  <!--}-->
-  <!--@if (countryResources.hasValue()) {-->
-  <!--  <country-list [countries]="countryResources.value()!"/>-->
-  <!--}-->
+<!--@if (countryResources.error()) {-->
+<!--  <h3>{{ countryResources.error() }}</h3>-->
+<!--}-->
+<!--@if (countryResources.hasValue()) {-->
+<!--  <country-list [countries]="countryResources.value()!"/>-->
+<!--}-->
 
-  <!--Angular version <= 18-->
-  <!--@if (isError()) {-->
-  <!--  <h3>{{ isError() }}</h3>-->
-  <!--} @else {-->
-  <!--  <country-list [countries]="countries()"/>-->
-  <!--}-->
+<!--Angular version <= 18-->
+<!--@if (isError()) {-->
+<!--  <h3>{{ isError() }}</h3>-->
+<!--} @else {-->
+<!--  <country-list [countries]="countries()"/>-->
+<!--}-->

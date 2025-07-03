@@ -11,6 +11,7 @@
     * [Parte 5 (Seccion 8 del curso)](#parte-5-seccion-8-del-curso)
     * [Parte 6 (Seccion 9 del curso)](#parte-6-seccion-9-del-curso)
     * [Parte 7 (Seccion 10 del curso)](#parte-7-seccion-10-del-curso)
+    * [Parte 8 (Seccion 11 del curso)](#parte-8-seccion-11-del-curso)
 
 # **_Introducción a TypeScript_**
 
@@ -41,7 +42,7 @@
 
 # **_Angular 19_**
 
-## Despliegues 
+## Despliegues
 
 + [01-bases](https://angular-bases-gian.netlify.app/#/)
 + [02-gifs-app](https://gian-gifs-app.netlify.app/)
@@ -131,7 +132,7 @@
 * Rutas hijas
 * Rutas Anidadas
 * Creación y comunicación entre componentes
-* [Tailwind 4.1](https://tailwindcss.com) 
+* [Tailwind 4.1](https://tailwindcss.com)
 * [DaisyUI](https://daisyui.com)
 * [Iconify](https://iconify.design)
 * Archivo de rutas por feature / module
@@ -140,11 +141,19 @@
 ## Parte 7 (Seccion 10 del curso)
 
 * Recursos como:
-  + Resources
-  + rxResources
+    + Resources
+    + rxResources
 * Señales
 * Servicios
 * Reutilización de componentes
 * Peticiones http
 * Operadores de RXJS
 * Mucho más
+
+## Parte 8 (Seccion 11 del curso)
+
+* Caché
+* Router
+* QueryParameters
+* Configuraciones
+* Debounce
