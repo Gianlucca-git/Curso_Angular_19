@@ -25,4 +25,26 @@
     </div>
   </div>
 
+  <div class="divider"></div>
+
+  <div class="stats stats-vertical lg:stats-horizontal shadow mx-10 m-7">
+    <div class="stat">
+      <div class="stat-title">Date Pipe</div>
+      <div class="stat-value">{{ nowDate() | date }}</div>
+      <div class="stat-desc">Real: {{ nowDate() }}</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-title">Date Days</div>
+      <div class="stat-value">{{ nowDate() | date:'EEEE d, MMMM' }}</div>
+      <div class="stat-desc">Long: {{ nowDate() | date:'long' }}</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-title">Date Pipe | mediumTime | GMT-6</div>
+      <div class="stat-value">{{ nowDate() | date:'mediumTime':'GMT-6' }}</div>
+      <div class="stat-desc">Short: {{ nowDate() | date:'short' }}</div>
+    </div>
+  </div>
+
 </section>
