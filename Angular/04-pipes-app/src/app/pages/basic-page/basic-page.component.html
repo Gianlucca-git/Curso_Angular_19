@@ -48,3 +48,12 @@
   </div>
 
 </section>
+
+<div class="flex flex-row gap-2 m-7">
+  <h1 class="text-2xl font-bold">Local Actual:
+    <span class="badge badge-ghost">{{currentLocal()}}</span>
+  </h1>
+  <button (click)="changeLocale('fr')" class="btn btn-primary">Franch</button>
+  <button (click)="changeLocale('en')" class="btn btn-primary">English</button>
+  <button (click)="changeLocale('es')" class="btn btn-primary">Spanish</button>
+</div>
