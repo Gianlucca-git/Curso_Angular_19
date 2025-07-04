@@ -1,1 +1,28 @@
-<p>basic-page works!</p>
+<section class="card bg-base-100 card-xs shadow-sm">
+
+  <section class="mx-10 mt-10">
+    <h1 class="text-2xl font-bold">Pipes Basicongos</h1>
+    <h3 class="text-xl font-thin">Pipes de Angular</h3>
+  </section>
+
+  <div class="stats stats-vertical lg:stats-horizontal shadow mx-10 m-7">
+    <div class="stat">
+      <div class="stat-title">LowerCase Pipe</div>
+      <div class="stat-value">{{ nameUpper() | lowercase }}</div>
+      <div class="stat-desc">Real: {{ nameUpper() }}</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-title">UpperCase Pipe</div>
+      <div class="stat-value">{{ nameLower() | uppercase }}</div>
+      <div class="stat-desc">Real: {{ nameLower() }}</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-title">TitleCase Pipe</div>
+      <div class="stat-value">{{ fullName() | titlecase }}</div>
+      <div class="stat-desc">Real: {{ fullName() }}</div>
+    </div>
+  </div>
+
+</section>
