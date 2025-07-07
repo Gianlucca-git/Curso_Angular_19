@@ -28,6 +28,19 @@
       </button>
     </app-stat>
 
+    <app-stat title="Sliceipe">
+      <b>Original</b>
+      <p class="text-primary">
+        {{ clients().join(', ') }}
+      </p>
+
+      <b class="mt-2">Slice:0:2</b>
+      <p class="text-primary">
+        {{ clients() | slice:0:2 }}
+      </p>
+
+    </app-stat>
+
   </div>
 
 

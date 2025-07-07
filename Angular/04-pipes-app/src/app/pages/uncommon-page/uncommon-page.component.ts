@@ -1,6 +1,6 @@
 import {Component, signal} from '@angular/core';
 import {StatComponent} from '../../components/stat/stat.component';
-import {I18nPluralPipe, I18nSelectPipe} from '@angular/common';
+import {I18nPluralPipe, I18nSelectPipe, SlicePipe} from '@angular/common';
 
 const client1 = {
   name: 'Pepita',
@@ -22,6 +22,7 @@ const client2 = {
     StatComponent,
     I18nSelectPipe,
     I18nPluralPipe,
+    SlicePipe,
   ],
   templateUrl: './uncommon-page.component.html',
 })
