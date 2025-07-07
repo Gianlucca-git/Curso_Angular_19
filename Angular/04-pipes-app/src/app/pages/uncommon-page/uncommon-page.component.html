@@ -40,9 +40,7 @@
       </p>
 
     </app-stat>
-
   </div>
-
 
   <div class="stats stats-vertical lg:stats-horizontal shadow mx-10 m-7">
 
@@ -54,6 +52,22 @@
       <b>Stringfy</b>
       <pre class="text-primary">{{ clients().join(', ') | json | uppercase }}</pre>
     </app-stat>
+
+    <app-stat title="KeyValuePipe">
+      <ul>
+        @for (item of profile| keyvalue; track $index) {
+          <li>
+          <span>
+            <strong class="text-primary">
+              {{ item.key | titlecase }}:
+            </strong>
+            {{ item.value }}
+          </span>
+          </li>
+        }
+      </ul>
+    </app-stat>
+
   </div>
 
 </section>

@@ -1,6 +1,14 @@
 import {Component, signal} from '@angular/core';
 import {StatComponent} from '../../components/stat/stat.component';
-import {I18nPluralPipe, I18nSelectPipe, JsonPipe, SlicePipe, UpperCasePipe} from '@angular/common';
+import {
+  I18nPluralPipe,
+  I18nSelectPipe,
+  JsonPipe,
+  KeyValuePipe,
+  SlicePipe,
+  TitleCasePipe,
+  UpperCasePipe
+} from '@angular/common';
 
 const client1 = {
   name: 'Pepita',
@@ -25,6 +33,8 @@ const client2 = {
     SlicePipe,
     JsonPipe,
     UpperCasePipe,
+    KeyValuePipe,
+    TitleCasePipe,
   ],
   templateUrl: './uncommon-page.component.html',
 })
@@ -60,5 +70,11 @@ export default class UncommonPageComponent {
     this.clients.update(prev => prev.slice(1));
   }
 
+  //key value Pipe
+  profile = {
+    firstName: 'Gian',
+    lastName: 'Lucca',
+    age: 27,
+  }
 
 }
