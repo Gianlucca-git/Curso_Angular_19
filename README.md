@@ -13,6 +13,7 @@
     * [Seccion 10 del curso](#seccion-10-del-curso)
     * [Seccion 11 del curso](#seccion-11-del-curso)
     * [Seccion 12 del curso](#seccion-12-del-curso)
+    * [Seccion 13 del curso](#seccion-13-del-curso)
 
 # **_Introducción a TypeScript_**
 
@@ -171,3 +172,10 @@
 * PercentPipe
 * i18nPluralPipe
 * i18nSelectPipe
+
+## Seccion 12 del curso
+
+* Pipes para transformar strings
+* Pipes dentro de propiedades computadas
+* Pipes para filtrar arreglos
+* Pipes para ordenar arreglos
