@@ -68,6 +68,15 @@
       </ul>
     </app-stat>
 
+    <app-stat title="AsynPipe">
+      <b>Promesa...</b>
+      <p class="text-primary">{{ promiseValue | async }}</p>
+
+      @if (promiseValue | async; as value){
+        <p>{{ value }}</p>
+      }
+    </app-stat>
+
   </div>
 
 </section>

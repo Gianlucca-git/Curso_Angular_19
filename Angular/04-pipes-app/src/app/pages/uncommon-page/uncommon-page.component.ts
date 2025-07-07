@@ -1,6 +1,7 @@
 import {Component, signal} from '@angular/core';
 import {StatComponent} from '../../components/stat/stat.component';
 import {
+  AsyncPipe,
   I18nPluralPipe,
   I18nSelectPipe,
   JsonPipe,
@@ -27,6 +28,7 @@ const client2 = {
 @Component({
   selector: 'app-uncommon-page',
   imports: [
+    AsyncPipe,
     StatComponent,
     I18nSelectPipe,
     I18nPluralPipe,
@@ -77,4 +79,11 @@ export default class UncommonPageComponent {
     age: 27,
   }
 
+  //Async Pipe
+  promiseValue = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('We have data in de Promise');
+      console.log('Promesa finalizada')
+    }, 3500)
+  })
 }
