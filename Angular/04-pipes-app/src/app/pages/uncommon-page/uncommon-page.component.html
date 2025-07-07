@@ -9,10 +9,22 @@
 
     <app-stat title="i18nSelectPipe">
       <p>Saludos {{ client().name }}, es un placer {{ client().gender | i18nSelect:invitationMap }}.</p>
+      <br>
       <button
         class="btn btn-primary"
         (click)="changeClient()"
       >Change Client
+      </button>
+    </app-stat>
+
+    <app-stat title="i18nPluralPipe">
+      <p>Actually: {{ clients().length | i18nPlural:clientsMap() }}</p>
+      <br>
+      <button
+        class="btn btn-primary"
+        [disabled]="clients().length == 0"
+        (click)="deleteClient()"
+      >Delected Client
       </button>
     </app-stat>
 
