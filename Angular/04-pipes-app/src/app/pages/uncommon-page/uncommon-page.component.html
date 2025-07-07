@@ -8,7 +8,12 @@
   <div class="stats stats-vertical lg:stats-horizontal shadow mx-10 m-7">
 
     <app-stat title="i18nSelectPipe">
-      <p> hola desde padre</p>
+      <p>Saludos {{ client().name }}, es un placer {{ client().gender | i18nSelect:invitationMap }}.</p>
+      <button
+        class="btn btn-primary"
+        (click)="changeClient()"
+      >Change Client
+      </button>
     </app-stat>
 
   </div>
