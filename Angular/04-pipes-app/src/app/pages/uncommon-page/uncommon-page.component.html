@@ -75,6 +75,10 @@
       @if (promiseValue | async; as value){
         <p>{{ value }}</p>
       }
+
+      <b>Observable...</b>
+      <p class="text-error">{{ myObservableTimer | async }}</p>
+
     </app-stat>
 
   </div>
