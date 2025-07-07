@@ -9,16 +9,92 @@
 
     <app-stat title="toggleCase">
       <br>
-      <b>@if (!valueButton()) {Lower Case} @else {Upper Case}</b>
-      <h1 class="text-xl font-extrabold">{{ name() | toggleCase:valueButton()}}</h1>
+      <b>@if (!valueButton()) {
+        Lower Case
+      } @else {
+        Upper Case
+      }</b>
+      <h1 class="text-xl font-extrabold">{{ name() | toggleCase:valueButton() }}</h1>
       <br>
       <button
         class="btn btn-primary"
         (click)="valueButton.set(!valueButton())"
       >
-        @if (valueButton()) {Change to LowerCase} @else {Change to UpperCase}
+        @if (valueButton()) {
+          Change to LowerCase
+        } @else {
+          Change to UpperCase
+        }
       </button>
     </app-stat>
   </div>
 
 </section>
+
+<div class="divider my-2"></div>
+
+<section class="mt-4 my-8">
+  <h1 class="text-xl font-bold">
+    Pipes in Actions!
+  </h1>
+  <div class="flex gap-2 justify-end w-full">
+    <button class="btn btn-primary">
+      By Name
+    </button>
+    <button class="btn btn-soft">
+      By Can
+    </button>
+    <button class="btn btn-primary">
+      By Color
+    </button>
+    <button class="btn btn-soft">
+      By Creator
+    </button>
+  </div>
+</section>
+
+<section class="card bg-base-100 card-xs shadow-sm">
+
+  <div class="overflow-x-auto">
+    <table class="table table-xs w-full">
+      <!-- head -->
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Fly</th>
+        <th>Color</th>
+        <th>Creator</th>
+      </tr>
+      </thead>
+      <tbody>
+
+        @for (hero of heroes(); track hero.id) {
+          <tr>
+            <td>{{ hero.id }}</td>
+            <td>{{ hero.name }}</td>
+            <td>
+              <span
+                class="text-start w-44"
+                [class.text-success]="hero.canFly"
+                [class.text-error]="!hero.canFly"
+              >
+                {{ hero.canFly | flyCase }}
+              </span>
+            </td>
+            <td>
+              <span
+                class="font-bold"
+                [style.color]="hero.color | colorCase:true">
+                {{ hero.color | colorCase }}
+              </span>
+            </td>
+            <td>{{ hero.creator | creatorCase }}</td>
+          </tr>
+        }
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
