@@ -5,7 +5,7 @@ import {Color, ColorMap} from '../interfaces/hero.interface';
   name: 'colorCase'
 })
 export class ColorCasePipe implements PipeTransform {
-  transform(num: number, needColor: boolean = false): string {
+  transform(num: Color, needColor: boolean = false): string {
 
     let result = Color[num];
     if (result === undefined) {
