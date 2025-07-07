@@ -44,4 +44,16 @@
   </div>
 
 
+  <div class="stats stats-vertical lg:stats-horizontal shadow mx-10 m-7">
+
+    <app-stat title="JsonPipe">
+      <b>Json</b>
+      <pre class="text-primary">{{ client() | json }}</pre>
+      <b>List</b>
+      <pre class="text-primary">{{ clients() | json }}</pre>
+      <b>Stringfy</b>
+      <pre class="text-primary">{{ clients().join(', ') | json | uppercase }}</pre>
+    </app-stat>
+  </div>
+
 </section>
