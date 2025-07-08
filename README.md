@@ -143,7 +143,9 @@
 
   > npm install tailwindcss @tailwindcss/cli
   src/input.css  ->> @import "tailwindcss";
-  
+  > npx @tailwindcss/cli -i ./src/styles.css -o ./src/output.css --watch
+
+
 * [DaisyUI](https://daisyui.com)
 * [Iconify](https://iconify.design)
 * Archivo de rutas por feature / module
