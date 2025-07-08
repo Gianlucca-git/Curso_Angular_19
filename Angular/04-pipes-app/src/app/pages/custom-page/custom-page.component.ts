@@ -7,6 +7,7 @@ import {ColorCasePipe} from '../../pipes/color-case.pipe';
 import {CreatorCasePipe} from '../../pipes/creator-case.pipe';
 import {SortByPipe} from '../../pipes/sort-by.pipe';
 import {Hero} from '../../interfaces/hero.interface';
+import {FilterPipe} from '../../pipes/filter.pipe';
 
 @Component({
   selector: 'app-custom-page',
@@ -18,6 +19,7 @@ import {Hero} from '../../interfaces/hero.interface';
     ColorCasePipe,
     CreatorCasePipe,
     SortByPipe,
+    FilterPipe,
   ],
   templateUrl: './custom-page.component.html',
 })
@@ -29,4 +31,6 @@ export default class CustomPageComponent {
   heroes = signal(heroes);
 
   sortBy = signal<keyof Hero | null>(null);
+
+  searcher = signal('');
 }

@@ -33,27 +33,43 @@
 
 <div class="divider my-2"></div>
 
-<section class="mt-4 my-8">
-  <h1 class="text-xl font-bold">
-    Sort by: {{sortBy()}}
-  </h1>
-  <div class="flex gap-2 justify-end w-full">
-    <button (click)="sortBy.set('name')" class="btn btn-primary">
-      By Name
-    </button>
-    <button (click)="sortBy.set('canFly')" class="btn btn-soft">
-      By Can
-    </button>
-    <button (click)="sortBy.set('color')" class="btn btn-primary">
-      By Color
-    </button>
-    <button (click)="sortBy.set('creator')" class="btn btn-soft">
-      By Creator
-    </button>
-  </div>
-</section>
+<div class="stats stats-vertical lg:stats-horizontal shadow mx-10 m-7">
+  <app-stat title="">
+    <h1 class="text-xl font-bold mt-4">
+      filter by: {{ searcher() }}
+    </h1>
+    <input
+      type="text"
+      class="input input-bordered w-full max-w-xs mt-4"
+      placeholder="Search Hero"
+      (input)="searcher.set(txtSearch.value)"
+      #txtSearch
+    >
+  </app-stat>
 
-<section class="card bg-base-100 card-xs shadow-sm">
+  <app-stat title="">
+    <h1 class="text-xl font-bold mt-4">
+      Sort by Name: {{ sortBy() }}
+    </h1>
+
+    <div class="flex gap-2 w-full mt-4">
+      <button (click)="sortBy.set('name')" class="btn btn-primary">
+        By Name
+      </button>
+      <button (click)="sortBy.set('canFly')" class="btn btn-soft">
+        By Can
+      </button>
+      <button (click)="sortBy.set('color')" class="btn btn-primary">
+        By Color
+      </button>
+      <button (click)="sortBy.set('creator')" class="btn btn-soft">
+        By Creator
+      </button>
+    </div>
+  </app-stat>
+</div>
+
+<section class="card bg-base-100 card-xs shadow-sm mx-10">
 
   <div class="overflow-x-auto">
     <table class="table table-xs w-full">
@@ -69,7 +85,7 @@
       </thead>
       <tbody>
 
-        @for (hero of heroes() | sortBy:sortBy(); track hero.id) {
+        @for (hero of heroes() | filterPipe:searcher() | sortBy:sortBy(); track hero.id) {
           <tr>
             <td>{{ hero.id }}</td>
             <td>{{ hero.name }}</td>
