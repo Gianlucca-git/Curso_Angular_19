@@ -139,14 +139,18 @@
 * Rutas hijas
 * Rutas Anidadas
 * Creación y comunicación entre componentes
-* [Tailwind 4.1](https://tailwindcss.com)
+* [Tailwind 4.1](https://tailwindcss.com) Using PostCSS
 
   > npm install tailwindcss @tailwindcss/cli
-  src/input.css  ->> @import "tailwindcss";
-  > npx @tailwindcss/cli -i ./src/styles.css -o ./src/output.css --watch
-
-
+  ./src/styles.css  ->> @import "tailwindcss";
+  ./postcssrc.json ->> {"plugins":{"@tailwindcss/postcss":{}}}
+  
 * [DaisyUI](https://daisyui.com)
+
+  > npm i -D daisyui@latest
+  ./src/styles.css ->> @plugin "daisyui" { themes: light --default, dark --prefersdark, cupcake; }
+  ./src/index.html ->> <html data-theme="cupcake"></html>
+
 * [Iconify](https://iconify.design)
 * Archivo de rutas por feature / module
 * Carga perezosa de módulos de rutas
