@@ -4,8 +4,9 @@ import {ToggleCasePipe} from '../../pipes/toggle-case.pipe';
 import {heroes} from '../../data/heros.data';
 import {FlyCasePipe} from '../../pipes/fly-case.pipe';
 import {ColorCasePipe} from '../../pipes/color-case.pipe';
-import {NgStyle} from '@angular/common';
 import {CreatorCasePipe} from '../../pipes/creator-case.pipe';
+import {SortByPipe} from '../../pipes/sort-by.pipe';
+import {Hero} from '../../interfaces/hero.interface';
 
 @Component({
   selector: 'app-custom-page',
@@ -15,8 +16,8 @@ import {CreatorCasePipe} from '../../pipes/creator-case.pipe';
     FlyCasePipe,
     FlyCasePipe,
     ColorCasePipe,
-    NgStyle,
     CreatorCasePipe,
+    SortByPipe,
   ],
   templateUrl: './custom-page.component.html',
 })
@@ -26,4 +27,6 @@ export default class CustomPageComponent {
   valueButton = signal(false);
 
   heroes = signal(heroes);
+
+  sortBy = signal<keyof Hero | null>(null);
 }

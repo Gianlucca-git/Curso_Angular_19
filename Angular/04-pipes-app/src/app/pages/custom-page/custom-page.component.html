@@ -35,19 +35,19 @@
 
 <section class="mt-4 my-8">
   <h1 class="text-xl font-bold">
-    Pipes in Actions!
+    Sort by: {{sortBy()}}
   </h1>
   <div class="flex gap-2 justify-end w-full">
-    <button class="btn btn-primary">
+    <button (click)="sortBy.set('name')" class="btn btn-primary">
       By Name
     </button>
-    <button class="btn btn-soft">
+    <button (click)="sortBy.set('canFly')" class="btn btn-soft">
       By Can
     </button>
-    <button class="btn btn-primary">
+    <button (click)="sortBy.set('color')" class="btn btn-primary">
       By Color
     </button>
-    <button class="btn btn-soft">
+    <button (click)="sortBy.set('creator')" class="btn btn-soft">
       By Creator
     </button>
   </div>
@@ -69,7 +69,7 @@
       </thead>
       <tbody>
 
-        @for (hero of heroes(); track hero.id) {
+        @for (hero of heroes() | sortBy:sortBy(); track hero.id) {
           <tr>
             <td>{{ hero.id }}</td>
             <td>{{ hero.name }}</td>
