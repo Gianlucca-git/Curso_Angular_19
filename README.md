@@ -1,9 +1,18 @@
 [Curso Angular Udemy](https://www.udemy.com/course/angular-fernando-herrera)
 
+## Despliegues
+
++ [01-bases](https://angular-bases-gian.netlify.app/#/)
++ [02-gifs-app](https://gian-gifs-app.netlify.app/)
++ [03-country-app](https://gian-countries.netlify.app/)
++ [04-pipes-app](https://gian-pipes.netlify.app/)
+
+
 * [**_Introducción a TypeScript_**](#_introducción-a-typescript_)
     * [Comandos](#comandos)
 * [**_Angular 19_**](#_angular-19_)
     * [Comandos](#comandos-1)
+    * [Despliegues](#despliegues)
     * [Seccion 4 del curso](#seccion-4-del-curso)
     * [Seccion 5 del curso](#seccion-5-del-curso)
     * [Seccion 6 del curso](#seccion-6-del-curso)
@@ -14,6 +23,7 @@
     * [Seccion 11 del curso](#seccion-11-del-curso)
     * [Seccion 12 del curso](#seccion-12-del-curso)
     * [Seccion 13 del curso](#seccion-13-del-curso)
+    * [Seccion 14 del curso](#seccion-14-del-curso)
 
 # **_Introducción a TypeScript_**
 
@@ -43,12 +53,6 @@
 > npm run dev
 
 # **_Angular 19_**
-
-## Despliegues
-
-+ [01-bases](https://angular-bases-gian.netlify.app/#/)
-+ [02-gifs-app](https://gian-gifs-app.netlify.app/)
-+ [03-country-app](https://gian-countries.netlify.app/)
 
 ## Comandos
 
@@ -136,6 +140,10 @@
 * Rutas Anidadas
 * Creación y comunicación entre componentes
 * [Tailwind 4.1](https://tailwindcss.com)
+
+  > npm install tailwindcss @tailwindcss/cli
+  src/input.css  ->> @import "tailwindcss";
+  
 * [DaisyUI](https://daisyui.com)
 * [Iconify](https://iconify.design)
 * Archivo de rutas por feature / module
@@ -173,9 +181,22 @@
 * i18nPluralPipe
 * i18nSelectPipe
 
-## Seccion 12 del curso
+## Seccion 13 del curso
 
 * Pipes para transformar strings
 * Pipes dentro de propiedades computadas
 * Pipes para filtrar arreglos
 * Pipes para ordenar arreglos
+
+## Seccion 14 del curso
+
+* Reactive Forms Module en Standalone components
+* Form Builder
+* FormControls
+* FormArrays
+* Controles dinámicos
+* Formularios reactivos
+* Campos reactivos fuera de formularios
+* NgSubmit
+* Clases utilitarias
+* Validaciones básicas pre-fabricadas
