@@ -35,7 +35,7 @@ export class BasicPageComponent {
   });// eje: [valor, [validador_sincrono], validador_asincrono]]
 
   isValidFiled(fielName: string): boolean | null {
-    return !!this.myForm.controls[fielName].errors;
+    return (!!this.myForm.controls[fielName].errors) && (this.myForm.controls[fielName].touched);
   }
 
   getFieldError(fieldName: string): string | null {
@@ -57,4 +57,16 @@ export class BasicPageComponent {
     return null;
   }
 
+  onSave(): void {
+    if (this.myForm.invalid) {
+      //determinar si todos los campos fueron tocados
+      this.myForm.markAllAsTouched();
+      return;
+    }
+
+    this.myForm.reset({
+      price: 0,
+      inStorage: 0
+    });
+  }
 }
