@@ -1,1 +1,113 @@
-<p>switches-page works!</p>
+<header-component [title]="'Switches'">
+
+  <form autocomplete="off">
+
+    <!-- Radio -->
+    <div class="row mb-3">
+      <label class="col-sm-3 col-form-label">Género</label>
+      <div class="col-sm-9">
+
+        <div class="form-check">
+
+          <input type="radio" name="radio-4" class="radio radio-primary"
+                 checked="checked" id="radioMasculino"/>
+
+          <label class="form-check-label" for="radioMasculino">
+            Masculino
+          </label>
+        </div>
+
+        <input type="radio" name="radio-4" class="radio radio-primary" checked="checked"/>
+        <input type="radio" name="radio-4" class="radio radio-primary"/>
+
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="radio"
+                 value="F"
+                 id="radioFemenino">
+          <label class="form-check-label" for="radioFemenino">
+            Femenino
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Switches -->
+    <div class="row mb-3">
+      <label class="col-sm-3 col-form-label">Notificaciones</label>
+      <div class="col-sm-9">
+
+        <div class="form-check form-switch mt-2">
+          <input
+            type="checkbox"
+            id="flexSwitchCheckChecked"
+            class="checkbox checkbox-accent"/>
+          <label class="form-check-label mx-2" for="flexSwitchCheckChecked">Quiero recibir notificaciones</label>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Switches -->
+    <div class="row mb-3">
+      <label class="col-sm-3 col-form-label"></label>
+      <div class="col-sm-9">
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="checkbox"
+                 id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Términos y condiciones de uso
+          </label>
+        </div>
+        <span class="form-text text-danger">
+                 Debe de aceptar las condiciones de uso
+              </span>
+
+      </div>
+    </div>
+
+
+    <!-- Boton submit -->
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary float-end"
+                type="submit">
+          Guardar
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="card bg-neutral text-neutral-content w-96">
+    <div class="card-body font-sans">
+      <h2 class="items-center text-center font-semibold">Terminal</h2>
+
+      <h5>Valor del formulario</h5>
+      <pre>{{ 'object' | json }}</pre>
+      <br>
+
+      <h5>Persona</h5>
+      <pre>{{ 'object' | json }}</pre>
+      <br>
+
+      <h5>Valid</h5>
+      <pre>{{ 'object' | json }}</pre>
+
+
+    </div>
+  </div>
+
+
+</header-component>
+
+<!-- <h5>Términos</h5> -->
+<!-- <pre>{{ myForm.controls?.terminos?.errors | json }}</pre> -->
+
+<!-- <br>
+<pre>Condiciones: </pre> -->
+
+
+

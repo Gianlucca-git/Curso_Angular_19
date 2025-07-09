@@ -1,1 +1,41 @@
-<p>side-menu works!</p>
+<section>
+  <ul class="menu bg-base-200 shadow-xl lg:menu-horizontal rounded-box">
+    @for (item of reactiveMenu; track item.title) {
+      <li [routerLink]="item.route" routerLinkActive="active">
+        <a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" stroke="currentColor">
+            <path [attr.d]="item.icon" fill="#d5d5d5"/>
+          </svg>
+          Form {{ item.title | titlecase}}
+        </a>
+      </li>
+    }
+  </ul>
+
+  <ul class="menu bg-base-200 shadow-xl lg:menu-horizontal rounded-box mt-5 lg:mx-5">
+    @for (item of countryMenu; track item.title) {
+      <li [routerLink]="item.route" routerLinkActive="active">
+        <a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" stroke="currentColor">
+            <path [attr.d]="item.icon" fill="#d5d5d5"/>
+          </svg>
+          {{ item.title | titlecase}}
+        </a>
+      </li>
+    }
+  </ul>
+
+  <ul class="menu bg-blue-200 shadow-xl lg:menu-horizontal rounded-box skeleton float-end">
+    @for (item of authMenu; track item.title) {
+      <li [routerLink]="item.route" routerLinkActive="active">
+        <a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" stroke="currentColor">
+            <path [attr.d]="item.icon" fill="#d5d5d5"/>
+          </svg>
+          {{ item.title | titlecase}}
+        </a>
+      </li>
+    }
+  </ul>
+</section>
+

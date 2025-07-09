@@ -1,1 +1,66 @@
-<p>basic-page works!</p>
+<header-component [title]="'Basic'">
+
+
+  <div class="stats stats-vertical lg:stats-horizontal w-full">
+
+    <div class="stat">
+      <form autocomplete="off" [formGroup]="myForm">
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Product</legend>
+          <input
+            type="text" class="input"
+            placeholder="Input Name"
+            formControlName="name"
+          />
+          <p class="label text-danger">error message</p>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Price</legend>
+          <input
+            type="number" class="input"
+            placeholder="Price"
+            formControlName="price"
+          />
+          <p class="label text-danger">The price must be 0 or greater</p>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Stock</legend>
+          <input
+            type="number" class="input"
+            placeholder="Product Stock"
+            formControlName="inStorage"
+          />
+          <p class="label text-danger">The Stock must be 0 or greater</p>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary float-end">
+          Send
+        </button>
+      </form>
+    </div>
+
+    <div class="stat bg-neutral text-neutral-content">
+      <div class="card-body font-sans">
+        <h2 class="items-center text-center font-semibold">Terminal</h2>
+
+        <span><pre>Valid:  {{ myForm.valid | json }}</pre> </span>
+
+        <span><pre>Pristine: {{ myForm.pristine | json }}</pre> </span>
+
+        <span><pre>Touched: {{ myForm.touched | json }}</pre> </span>
+
+        <span><pre>.   Product Error: {{ myForm.controls.name.errors | json }}</pre> </span>
+        <span><pre>.   Price Error: {{ myForm.controls.price.errors | json }}</pre> </span>
+        <span><pre>.   Stock Error: {{ myForm.controls.inStorage.errors | json }}</pre> </span>
+
+        <span><pre>Values: {{ myForm.value  | json }}</pre> </span>
+
+      </div>
+    </div>
+
+  </div>
+
+</header-component>
+
