@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {JsonPipe} from '@angular/common';
 import {HeaderComponentComponent} from '../../header-component/header-component.component';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators as v} from '@angular/forms';
+import {FormUtils} from '../../../utils/form.utils';
 
 @Component({
   selector: 'app-basic-page',
@@ -13,6 +14,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators as v} from '@ang
   templateUrl: './basic-page.component.html',
 })
 export class BasicPageComponent {
+  formUtils = FormUtils;
 
   // tradicional
   // myForm = new FormGroup({
@@ -34,28 +36,7 @@ export class BasicPageComponent {
     ],
   });// eje: [valor, [validador_sincrono], validador_asincrono]]
 
-  isValidFiled(fielName: string): boolean | null {
-    return (!!this.myForm.controls[fielName].errors) && (this.myForm.controls[fielName].touched);
-  }
-
-  getFieldError(fieldName: string): string | null {
-
-    if (!this.myForm.controls[fieldName]) return null;
-
-    const errors = this.myForm.controls[fieldName].errors ?? {};
-
-    for (const key of Object.keys(errors)) {
-      switch (key) {
-        case 'required':
-          return 'This field is required.';
-        case 'minlength':
-          return `This field must have at least ${errors['minlength'].requiredLength} characters.`;
-        case 'min':
-          return `This field must be greater than ${errors['min'].min}.`;
-      }
-    }
-    return null;
-  }
+  //NOTA: las implementaciones de las validaciones tambien son posibles desde aca
 
   onSave(): void {
     if (this.myForm.invalid) {
