@@ -12,7 +12,16 @@
             placeholder="Input Name"
             formControlName="name"
           />
-          <p class="label text-danger">error message</p>
+          <!--          @if (isValidFiled('name')) {-->
+          <!--            <p class="label text-red-800">Required Product Name</p>-->
+          <!--          }-->
+          <!--          @if (myForm.controls['name'].errors?.['minlength']) {-->
+          <!--            <p class="label text-red-800">Min 5 Characters</p>-->
+          <!--          }-->
+
+          @if (isValidFiled('name')) {
+            <p class="label text-red-800">{{ getFieldError('name') }}</p>
+          }
         </fieldset>
 
         <fieldset class="fieldset">
@@ -51,9 +60,9 @@
 
         <span><pre>Touched: {{ myForm.touched | json }}</pre> </span>
 
-        <span><pre>.   Product Error: {{ myForm.controls.name.errors | json }}</pre> </span>
-        <span><pre>.   Price Error: {{ myForm.controls.price.errors | json }}</pre> </span>
-        <span><pre>.   Stock Error: {{ myForm.controls.inStorage.errors | json }}</pre> </span>
+        <span><pre>.   Product Error: {{ myForm.controls['name'].errors | json }}</pre> </span>
+        <span><pre>.   Price Error: {{ myForm.controls['price'].errors | json }}</pre> </span>
+        <span><pre>.   Stock Error: {{ myForm.controls['inStorage'].errors | json }}</pre> </span>
 
         <span><pre>Values: {{ myForm.value  | json }}</pre> </span>
 
