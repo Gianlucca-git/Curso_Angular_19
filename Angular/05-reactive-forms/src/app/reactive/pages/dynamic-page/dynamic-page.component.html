@@ -1,55 +1,74 @@
 <header-component [title]="'Dynamic'">
 
-  <form autocomplete="off">
+  <div class="stats stats-vertical lg:stats-horizontal w-full">
 
-    <fieldset class="fieldset">
-      <legend class="fieldset-legend">Name</legend>
-      <input type="text" class="input" placeholder="Full Name"/>
-      <p class="label text-danger">error message</p>
-    </fieldset>
+    <div class="stat">
+      <form autocomplete="off" [formGroup]="myForm">
 
-    <fieldset class="fieldset">
-      <legend class="fieldset-legend">Add Game</legend>
-      <div>
-        <input type="text" class="input" placeholder="Name Game"/>
-        <button type="submit" class="btn btn-primary mx-2">Add Fav</button>
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Name</legend>
+          <input
+            type="text" class="input"
+            placeholder="Full Name"
+            formControlName="name"
+          />
+          <!--          @if (formUtils.isValidFiled(myForm, 'price')) {-->
+          <!--            <p class="label text-red-800">{{ formUtils.getFieldError(myForm, 'price') }}</p>-->
+          <!--          }-->
+          <p class="label text-danger">error message</p>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend class="fieldset-legend">Add Game</legend>
+          <div>
+            <input
+              type="text" class="input"
+              placeholder="Name Game"
+            />
+            <button type="submit" class="btn btn-primary float-end">Add Fav</button>
+          </div>
+          <p class="label text-danger">The price must be 0 or greater</p>
+        </fieldset>
+
+        <br>
+        <div class="divider">Favorites</div>
+
+        <section formArrayName="favoriteGames">
+          @for (favoriteGame of favoriteGames.controls; track $index; let i = $index) {
+
+            <fieldset class="fieldset">
+              <div>
+                <input
+                  class="input"
+                  [formControlName]="i"
+                >
+                <button class="btn btn-error float-end" type="button">Delete</button>
+              </div>
+              <p class="label text-danger">required</p>
+            </fieldset>
+          }
+        </section>
+
+        <button type="submit" class="btn btn-primary mt-7">
+          <!-- [disabled]="myForm.invalid" -->
+          Send
+        </button>
+
+      </form>
+    </div>
+
+    <div class="stat bg-neutral text-neutral-content">
+      <div class="card-body font-sans">
+        <h2 class="items-center text-center font-semibold">Terminal</h2>
+
+        <span><pre>Valid:  {{ myForm.valid | json }}</pre> </span>
+        <span><pre>Value:  {{ myForm.value | json }}</pre> </span>
+
+<!--        <span>Agregar Juego</span>-->
+<!--        <span><pre>Value:  {{ myForm.valid | json }}</pre> </span>-->
+<!--        <span><pre>Value:  {{ myForm.valid | json }}</pre> </span>-->
+
       </div>
-      <p class="label text-danger">The price must be 0 or greater</p>
-    </fieldset>
-
-    <fieldset class="fieldset">
-      <legend class="fieldset-legend">Favorites</legend>
-      <div>
-        <input type="text" class="input" placeholder="Favorite Game"/>
-        <button class="btn btn-error mx-2" type="button">Delete</button>
-      </div>
-      <p class="label text-danger">required</p>
-    </fieldset>
-
-    <button type="submit" class="btn btn-primary float-end my-5">
-      <!-- [disabled]="myForm.invalid" -->
-      Save
-    </button>
-
-  </form>
-
-  <div class="card bg-neutral text-neutral-content w-96">
-    <div class="card-body font-sans">
-      <h2 class="items-center text-center font-semibold">Terminal</h2>
-      <span>Valid</span>
-      <pre>{{ 'object' | json }}</pre>
-      <br>
-
-      <span>Value</span>
-      <pre>{{ 'object' | json }}</pre>
-      <br>
-
-      <span>Agregar Juego</span>
-      <pre>{{ 'object' | json }}</pre>
-      <pre>{{ 'object' | json }}</pre>
-
     </div>
   </div>
-
-
 </header-component>
