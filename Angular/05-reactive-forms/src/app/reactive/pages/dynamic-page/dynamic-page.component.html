@@ -25,11 +25,14 @@
               placeholder="Name Game"
               [formControl]="newFavorite"
               (keydown.enter)="onAddToFavorites()"
+              (keydown.enter)="$event.preventDefault()"
             />
             <button
               type="submit" class="btn btn-primary float-end"
               (click)="onAddToFavorites()"
-            >Add Fav</button>
+              (click)="$event.preventDefault()"
+            >Add Fav
+            </button>
           </div>
         </fieldset>
 
