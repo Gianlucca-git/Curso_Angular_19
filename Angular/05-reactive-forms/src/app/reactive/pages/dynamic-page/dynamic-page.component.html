@@ -3,7 +3,7 @@
   <div class="stats stats-vertical lg:stats-horizontal w-full">
 
     <div class="stat">
-      <form autocomplete="off" [formGroup]="myForm">
+      <form autocomplete="off" [formGroup]="myForm" (ngSubmit)="onSubmit()">
 
         <fieldset class="fieldset">
           <legend class="fieldset-legend">Name</legend>
@@ -15,7 +15,6 @@
           @if (formUtils.isValidFiled(myForm, 'name')) {
             <p class="label text-red-800">{{ formUtils.getFieldError(myForm, 'name') }}</p>
           }
-          <p class="label text-danger">error message</p>
         </fieldset>
 
         <fieldset class="fieldset">
@@ -24,14 +23,22 @@
             <input
               type="text" class="input"
               placeholder="Name Game"
+              [formControl]="newFavorite"
+              (keydown.enter)="onAddToFavorites()"
             />
-            <button type="submit" class="btn btn-primary float-end">Add Fav</button>
+            <button
+              type="submit" class="btn btn-primary float-end"
+              (click)="onAddToFavorites()"
+            >Add Fav</button>
           </div>
-          <p class="label text-danger">The price must be 0 or greater</p>
         </fieldset>
 
         <br>
         <div class="divider">Favorites</div>
+
+        @if (formUtils.isValidFiled(myForm, 'favoriteGames')) {
+          <p class="label text-red-800">Almost 3 Games</p>
+        }
 
         <section formArrayName="favoriteGames">
           @for (favoriteGame of favoriteGames.controls; track $index; let i = $index) {
@@ -42,7 +49,12 @@
                   class="input"
                   [formControlName]="i"
                 >
-                <button class="btn btn-error float-end" type="button">Delete</button>
+                <button
+                  class="btn btn-error float-end" type="button"
+                  (click)="onDeletedToFavorites(i)"
+                >
+                  Delete
+                </button>
               </div>
               @if (formUtils.isValidFieldInArray(favoriteGames, i)) {
                 <p class="label text-red-800">{{ formUtils.getFieldErrorInArray(favoriteGames, i) }}</p>
@@ -63,12 +75,12 @@
       <div class="card-body font-sans">
         <h2 class="items-center text-center font-semibold">Terminal</h2>
 
-        <span><pre>Valid:  {{ myForm.valid | json }}</pre> </span>
-        <span><pre>Value:  {{ myForm.value | json }}</pre> </span>
+        <span><pre>Valid All Form:  {{ myForm.valid | json }}</pre></span>
+        <span><pre>Values:  {{ myForm.value | json }}</pre></span>
 
-        <!--        <span>Agregar Juego</span>-->
-        <!--        <span><pre>Value:  {{ myForm.valid | json }}</pre> </span>-->
-        <!--        <span><pre>Value:  {{ myForm.valid | json }}</pre> </span>-->
+        <span>Add Games</span>
+        <span><pre>Errors:  {{ myForm.controls['favoriteGames'].errors | json }}</pre></span>
+        <span><pre>Value:  {{ myForm.controls['favoriteGames'].value | json }}</pre></span>
 
       </div>
     </div>
