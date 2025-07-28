@@ -15,7 +15,7 @@ import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators as v}
 })
 export class DynamicPageComponent {
 
-  private formUtils = FormUtils;
+  protected formUtils = FormUtils;
 
   private formBuilder = inject(FormBuilder);
   myForm: FormGroup = this.formBuilder.group({

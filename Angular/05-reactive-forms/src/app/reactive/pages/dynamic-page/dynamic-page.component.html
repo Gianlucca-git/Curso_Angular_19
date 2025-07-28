@@ -12,9 +12,9 @@
             placeholder="Full Name"
             formControlName="name"
           />
-          <!--          @if (formUtils.isValidFiled(myForm, 'price')) {-->
-          <!--            <p class="label text-red-800">{{ formUtils.getFieldError(myForm, 'price') }}</p>-->
-          <!--          }-->
+          @if (formUtils.isValidFiled(myForm, 'name')) {
+            <p class="label text-red-800">{{ formUtils.getFieldError(myForm, 'name') }}</p>
+          }
           <p class="label text-danger">error message</p>
         </fieldset>
 
@@ -44,7 +44,9 @@
                 >
                 <button class="btn btn-error float-end" type="button">Delete</button>
               </div>
-              <p class="label text-danger">required</p>
+              @if (formUtils.isValidFieldInArray(favoriteGames, i)) {
+                <p class="label text-red-800">{{ formUtils.getFieldErrorInArray(favoriteGames, i) }}</p>
+              }
             </fieldset>
           }
         </section>
@@ -64,9 +66,9 @@
         <span><pre>Valid:  {{ myForm.valid | json }}</pre> </span>
         <span><pre>Value:  {{ myForm.value | json }}</pre> </span>
 
-<!--        <span>Agregar Juego</span>-->
-<!--        <span><pre>Value:  {{ myForm.valid | json }}</pre> </span>-->
-<!--        <span><pre>Value:  {{ myForm.valid | json }}</pre> </span>-->
+        <!--        <span>Agregar Juego</span>-->
+        <!--        <span><pre>Value:  {{ myForm.valid | json }}</pre> </span>-->
+        <!--        <span><pre>Value:  {{ myForm.valid | json }}</pre> </span>-->
 
       </div>
     </div>
